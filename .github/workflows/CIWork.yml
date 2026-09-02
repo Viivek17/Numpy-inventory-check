@@ -1,0 +1,37 @@
+name: Basic GitHub Actions Workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  basic-tasks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Current Directory
+        run: pwd
+
+      - name: List Files
+        run: ls -la
+
+      - name: Show Current Date
+        run: date
+
+      - name: Create Text File
+        run: |
+          echo "This file was created by GitHub Actions." > output.txt
+          echo "Workflow is working successfully." >> output.txt
+
+      - name: Display Created File
+        run: cat output.txt
+
+      - name: Run Python Program
+        run: |
+          python3 - <<'PY'
+          print("Hello from Python!")
+          print("GitHub Actions is running successfully.")
+          PY
