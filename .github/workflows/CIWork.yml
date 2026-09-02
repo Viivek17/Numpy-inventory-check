@@ -29,9 +29,4 @@ jobs:
       - name: Display Created File
         run: cat output.txt
 
-      - name: Run Python Program
-        run: |
-          python3 - <<'PY'
-          print("Hello from Python!")
-          print("GitHub Actions is running successfully.")
-          PY
+     
